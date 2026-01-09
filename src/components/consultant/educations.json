@@ -1,0 +1,26 @@
+{
+  "collectionName": "education_entries",
+  "info": {
+    "name": "education-entry",
+    "icon": "graduation-cap",
+    "displayName": "Education",
+    "description": "Education entries"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "institution": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
+    }
+  }
+}

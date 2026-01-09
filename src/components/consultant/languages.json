@@ -1,0 +1,25 @@
+{
+  "collectionName": "languages",
+  "info": {
+    "name": "language",
+    "icon": "globe",
+    "displayName": "Language",
+    "description": "Language is a system of communication consisting of sounds, words, and grammar, or the system of communication used by people in a particular country or type of work."
+  },
+  "attributes": {
+    "language": {
+      "type": "string"
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ]
+    }
+  }
+}

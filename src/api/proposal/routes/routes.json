@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "PUT",
+      "path": "/proposals/admin/:id",
+      "handler": "proposal.updateByAdmin",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/proposals/cons/:id",
+      "handler": "proposal.updateByConsultant",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/proposals/sign/:id",
+      "handler": "proposal.signByConsultant",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/proposals/sub-client",
+      "handler": "proposal.createBySubClient",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/proposals/:id/l3-approval",
+      "handler": "proposal.handleL3Approval",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/proposals/:id/feedback",
+      "handler": "proposal.addFeedback",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/proposals/:id/history",
+      "handler": "proposal.getProposalHistory",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/proposals/sub/:id",
+      "handler": "proposal.getSubClientProposals",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

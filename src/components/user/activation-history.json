@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_user_activation_history",
+  "info": {
+    "displayName": "Activation History",
+    "description": "Track the history of user activation and deactivation"
+  },
+  "options": {},
+  "attributes": {
+    "action": {
+      "type": "enumeration",
+      "enum": [
+        "Activated",
+        "Deactivated"
+      ],
+      "required": true
+    },
+    "actedBy": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "required": true
+    },
+    "actedAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "comment": {
+      "type": "text"
+    }
+  }
+} 

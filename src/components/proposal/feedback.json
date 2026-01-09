@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_proposal_feedback",
+  "info": {
+    "displayName": "Feedback",
+    "description": "Store feedback and comments on proposals"
+  },
+  "options": {},
+  "attributes": {
+    "comment": {
+      "type": "text",
+      "required": true
+    },
+    "providedBy": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "required": true
+    },
+    "providedAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "isResolved": {
+      "type": "boolean",
+      "default": false
+    },
+    "resolvedAt": {
+      "type": "datetime"
+    }
+  }
+} 

@@ -1,0 +1,45 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/clients/create",
+      "handler": "client.create",
+      "config": {
+        "policies": [],
+        "middlewares": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/clients/sub/:id",
+      "handler": "client.getSubClients",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/client/notifications/:id",
+      "handler": "client.getNotifications",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/client/sub-client/:id",
+      "handler": "client.getSubClientById",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/client/sub-client/:id",
+      "handler": "client.updateSubClient",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

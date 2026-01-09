@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "timesheets",
+  "info": {
+    "singularName": "timesheet",
+    "pluralName": "timesheets",
+    "displayName": "timesheet",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "year": {
+      "type": "integer",
+      "required": true
+    },
+    "month": {
+      "type": "enumeration",
+      "enum": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "required": true
+    },
+    "comments": {
+      "type": "json",
+      "default": []
+    },
+    "approvalStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Approved",
+        "Rejected",
+        "AwaitingApproval"
+      ]
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "timesheets"
+    },
+    "workingDays": {
+      "type": "component",
+      "repeatable": true,
+      "component": "time-sheet.working-days"
+    },
+    "isSubmitted": {
+      "type": "boolean",
+      "default": false
+    },
+    "timesheetFile": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

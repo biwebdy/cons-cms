@@ -1,0 +1,45 @@
+{
+    "routes": [
+        {
+            "method": "POST",
+            "path": "/consultants/create",
+            "handler": "consultant.create",
+            "config": {
+                "policies": [],
+                "middlewares": []
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/consultants/by-user/:userId",
+            "handler": "consultant.findConsultantByUser",
+            "config": {
+                "policies": []
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/consultants/sign",
+            "handler": "consultant.signByConsultant",
+            "config": {
+                "policies": []
+            }
+        },
+        {
+            "method": "PUT",
+            "path": "/consultants/status/:id",
+            "handler": "consultant.updateConsultantStatus",
+            "config": {
+                "policies": []
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/consultants/fill",
+            "handler": "consultant.fillExtraInfo",
+            "config": {
+                "policies": []
+            }
+        }
+    ]
+}

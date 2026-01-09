@@ -1,0 +1,30 @@
+{
+  "collectionName": "experiences",
+  "info": {
+    "name": "experience",
+    "icon": "briefcase",
+    "displayName": "Experience",
+    "description": "A work experience"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "employer": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "details": {
+      "type": "text"
+    },
+    "currentlyWorking": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

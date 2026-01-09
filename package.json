@@ -1,0 +1,43 @@
+{
+  "name": "cons-cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "4.25.11",
+    "@strapi/plugin-documentation": "^4.24.4",
+    "@strapi/plugin-email": "^4.25.12",
+    "@strapi/plugin-i18n": "4.25.11",
+    "@strapi/plugin-users-permissions": "^4.25.11",
+    "@strapi/provider-email-nodemailer": "^4.25.11",
+    "@strapi/strapi": "4.25.11",
+    "better-sqlite3": "8.6.0",
+    "docusign-esign": "^7.0.2",
+    "nodemailer": "^6.9.15",
+    "pg": "^8.11.5",
+    "pg-connection-string": "^2.6.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "strapi-plugin-rest-cache": "^4.2.9",
+    "strapi-provider-email-smtp": "^1.0.3",
+    "styled-components": "5.3.3"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "fd45799d-9571-4b48-b3b0-00930c892f87"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

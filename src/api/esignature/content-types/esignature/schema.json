@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "esignatures",
+  "info": {
+    "singularName": "esignature",
+    "pluralName": "esignatures",
+    "displayName": "Esignature"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "object": {
+      "type": "json"
+    }
+  }
+}

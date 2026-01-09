@@ -1,0 +1,134 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proposals",
+  "info": {
+    "singularName": "proposal",
+    "pluralName": "proposals",
+    "displayName": "proposal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "PendingConsultantSigning",
+        "AcceptedByConsultant",
+        "ApprovedByAdmin",
+        "RejectedByConsultant",
+        "RejectedByAdmin",
+        "RejectedByClient",
+        "SigningStartedByConsultant",
+        "SigningCompletedByConsultant",
+        "OfferCreated",
+        "ProposalCompleted",
+        "PendingL3Approval",
+        "PendingL1Approval",
+        "RejectedByL3",
+        "RejectedByL1",
+        "ApprovedByL3",
+        "ApprovedByL1"
+      ],
+      "default": "Pending"
+    },
+    "missionLocation": {
+      "type": "text",
+      "required": true
+    },
+    "typeOfWork": {
+      "type": "text",
+      "required": true
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
+    "numberOfDays": {
+      "type": "integer",
+      "required": false
+    },
+    "details": {
+      "type": "text"
+    },
+    "baseSalary": {
+      "type": "decimal",
+      "required": true
+    },
+    "vacationAndPulicHolidayAllowance": {
+      "type": "decimal",
+      "required": true
+    },
+    "totalHourlyWage": {
+      "type": "decimal",
+      "required": true
+    },
+    "fees": {
+      "type": "decimal"
+    },
+    "rejectionDetails": {
+      "type": "text"
+    },
+    "doccuSignEnvelopID": {
+      "type": "string"
+    },
+    "missionContract": {
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "client": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "proposals"
+    },
+    "consultant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::consultant.consultant",
+      "inversedBy": "proposals"
+    },
+    "offer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::offer.offer",
+      "inversedBy": "proposal"
+    },
+    "createdBy": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "approvalHistory": {
+      "type": "component",
+      "repeatable": true,
+      "component": "proposal.approval-history"
+    },
+    "feedback": {
+      "type": "component",
+      "repeatable": true,
+      "component": "proposal.feedback"
+    },
+    "requiresL1Approval": {
+      "type": "boolean",
+      "default": false
+    },
+    "isL4Proposal": {
+      "type": "boolean",
+      "default": false
+    },
+    "lastModifiedBy": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

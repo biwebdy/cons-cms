@@ -1,0 +1,96 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offers",
+  "info": {
+    "singularName": "offer",
+    "pluralName": "offers",
+    "displayName": "offer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "offerContract": {
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "offerEnvelopID": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Expired",
+        "ExpiredPO",
+        "Pending",
+        "AcceptedByClient",
+        "AcceptedByAdmin",
+        "PendingL3Signing",
+        "SignedByL3",
+        "PendingL1Approval",
+        "ApprovedByL1",
+        "RejectedByL1",
+        "POPending",
+        "POSubmitted",
+        "POApproved",
+        "POApprovedByAdmin",
+        "PORejected",
+        "ProjectStarted",
+        "PendingConsultantSigning",
+        "RejectedByClient",
+        "RejectedByAdmin",
+        "SigningStartedByClient",
+        "SigningCompletedByClient"
+      ],
+      "default": "Pending"
+    },
+    "signingCompletedAt": {
+      "type": "datetime"
+    },
+    "purchaseOrder": {
+      "allowedTypes": ["images", "files"],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "proposal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::proposal.proposal",
+      "mappedBy": "offer"
+    },
+    "poDeadline": {
+      "type": "datetime"
+    },
+    "poSubmittedAt": {
+      "type": "datetime"
+    },
+    "signedByL3At": {
+      "type": "datetime"
+    },
+    "l3Signer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "l1Approver": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "offerHistory": {
+      "type": "component",
+      "repeatable": true,
+      "component": "offer.offer-history"
+    }
+  }
+}

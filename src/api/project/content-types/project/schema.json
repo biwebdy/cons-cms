@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Ongoing",
+        "Paused",
+        "Canceled",
+        "Finished"
+      ],
+      "default": "Ongoing"
+    },
+    "timesheets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::timesheet.timesheet",
+      "mappedBy": "project"
+    },
+    "consultant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::consultant.consultant",
+      "inversedBy": "projects"
+    },
+    "client": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "projects"
+    },
+    "offer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::offer.offer"
+    }
+  }
+}

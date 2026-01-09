@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client_registration_forms",
+  "info": {
+    "singularName": "client-registration-form",
+    "pluralName": "client-registration-forms",
+    "displayName": "Client Registration Form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string"
+    }
+  }
+}

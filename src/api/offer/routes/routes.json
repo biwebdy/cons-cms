@@ -1,0 +1,36 @@
+{
+  "routes": [
+    {
+      "method": "PUT",
+      "path": "/offers/admin/:id",
+      "handler": "offer.updateByAdmin",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/offers/client/:offerID",
+      "handler": "offer.updateByClient",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/offers/sign/:id",
+      "handler": "offer.signByClient",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/offers/client-sub/:id",
+      "handler": "offer.getOffersForClientAndSubClient",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

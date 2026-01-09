@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_offer_history",
+  "info": {
+    "displayName": "Offer History",
+    "description": "Track the history of offer status changes"
+  },
+  "options": {},
+  "attributes": {
+    "action": {
+      "type": "enumeration",
+      "enum": [
+        "Created",
+        "L3Signed",
+        "L1Approved",
+        "L1Rejected",
+        "POSubmitted",
+        "POApproved",
+        "PORejected",
+        "POExpired",
+        "ProjectStarted"
+      ],
+      "required": true
+    },
+    "actedBy": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "required": true
+    },
+    "actedAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "comment": {
+      "type": "text"
+    },
+    "previousStatus": {
+      "type": "string"
+    },
+    "newStatus": {
+      "type": "string",
+      "required": true
+    }
+  }
+} 

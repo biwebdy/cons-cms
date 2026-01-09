@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cantons",
+  "info": {
+    "singularName": "canton",
+    "pluralName": "cantons",
+    "displayName": "canton"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

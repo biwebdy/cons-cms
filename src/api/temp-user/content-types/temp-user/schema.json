@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "temp_users",
+  "info": {
+    "singularName": "temp-user",
+    "pluralName": "temp-users",
+    "displayName": "TempUser"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "tempPassword": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consultants",
+  "info": {
+    "singularName": "consultant",
+    "pluralName": "consultants",
+    "displayName": "consultant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "consultant_id": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "resume": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "percentageCompletion": {
+      "type": "decimal",
+      "default": 16
+    },
+    "profileCompleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female",
+        "Others"
+      ]
+    },
+    "dob": {
+      "type": "date",
+      "required": true
+    },
+    "street": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "areaPostalCodes": {
+      "type": "string"
+    },
+    "commune": {
+      "type": "string"
+    },
+    "canton": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::canton.canton"
+    },
+    "country": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "about": {
+      "type": "text"
+    },
+    "mostRecentDiploma": {
+      "type": "text"
+    },
+    "profilePicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "bankingInfo": {
+      "displayName": "banking-info",
+      "type": "component",
+      "repeatable": false,
+      "component": "consultant.banking-info"
+    },
+    "experience": {
+      "displayName": "experiences",
+      "type": "component",
+      "repeatable": true,
+      "component": "consultant.experiences"
+    },
+    "languages": {
+      "displayName": "languages",
+      "type": "component",
+      "repeatable": true,
+      "component": "consultant.languages"
+    },
+    "education": {
+      "displayName": "educations",
+      "type": "component",
+      "repeatable": true,
+      "component": "consultant.educations"
+    },
+    "preferences": {
+      "displayName": "preferences",
+      "type": "component",
+      "repeatable": false,
+      "component": "consultant.preferences"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "consultant"
+    },
+    "civilStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Single",
+        "Married",
+        "Separated",
+        "Divorced",
+        "Widowed"
+      ]
+    },
+    "residencyPermit": {
+      "type": "enumeration",
+      "enum": [
+        "B permit",
+        "C permit",
+        "Swiss Citizenship",
+        "No permit",
+        "Others"
+      ]
+    },
+    "socialSecurityNumber": {
+      "type": "string"
+    },
+    "frameworkContract": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "frameworkContractEnvelopID": {
+      "type": "string"
+    },
+    "frameworkContractSigningDate": {
+      "type": "date"
+    },
+    "approval": {
+      "type": "enumeration",
+      "enum": [
+        "TOAPPROVE",
+        "APPROVED",
+        "REJECTED"
+      ],
+      "default": "TOAPPROVE"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project",
+      "private": true,
+      "mappedBy": "consultant"
+    },
+    "proposals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proposal.proposal",
+      "private": true,
+      "mappedBy": "consultant"
+    },
+    "deletedUserData": {
+      "type": "json",
+      "private": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "seniorityLevel": {
+      "type": "integer"
+    }
+  }
+}

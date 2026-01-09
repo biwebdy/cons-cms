@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_proposal_approval_history",
+  "info": {
+    "displayName": "Approval History",
+    "description": "Track the history of proposal approvals and rejections"
+  },
+  "options": {},
+  "attributes": {
+    "action": {
+      "type": "enumeration",
+      "enum": [
+        "Submitted",
+        "Approved",
+        "Rejected",
+        "FeedbackProvided",
+        "Resubmitted"
+      ],
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "comment": {
+      "type": "text"
+    },
+    "actedBy": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "actedAt": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+} 

@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/projects/sub/:id",
+      "handler": "project.getSubClientProjects",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "collectionName": "preferences",
+  "info": {
+    "name": "preference",
+    "icon": "globe",
+    "displayName": "preference",
+    "description": "preference"
+  },
+  "attributes": {
+    "daysAvailable": {
+      "type": "integer"
+    },
+    "industries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::industry.industry"
+    },
+    "preferredLocationOfWork": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::canton.canton"
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skill.skill"
+    },
+    "availableDate": {
+      "type": "date"
+    },
+    "rate": {
+      "type": "decimal"
+    },
+    "homeOfficePercentage": {
+      "type": "decimal"
+    }
+  }
+}

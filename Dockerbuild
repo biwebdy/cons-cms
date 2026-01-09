@@ -1,0 +1,63 @@
+# Build Stage
+FROM node:20-alpine as BUILD_IMAGE
+
+WORKDIR /strapi
+
+# Copy package files for dependency installation
+COPY ./package.json ./
+COPY ./yarn.lock ./
+
+# Install production dependencies
+RUN yarn install --production=true --frozen-lockfile
+
+# Copy the rest of the application files
+COPY . .
+
+# Define build-time arguments
+ARG DATABASE_HOST
+ARG BRANCH
+
+# Set environment variable for DATABASE_HOST
+ENV DATABASE_HOST=${DATABASE_HOST}
+
+# Dynamically replace the .env file based on the branch
+RUN if [ "$BRANCH" = "develop" ]; then \
+  echo "Using .env.develop for develop branch"; \
+  cp .env.develop .env; \
+    elif [ "$BRANCH" = "beta" ]; then \
+  echo "Using .env.beta for beta branch"; \
+  cp .env.beta .env; \
+    else \
+  echo "Using .env.prod for main branch"; \
+  cp .env.main .env; \
+    fi && \
+    sed -i "s|^DATABASE_HOST=.*|DATABASE_HOST=\"${DATABASE_HOST}\"|" .env
+
+# Set the environment to production
+ENV NODE_ENV=production
+
+# Build the Strapi application
+RUN yarn build
+
+#------------------------------------------------------------------------------------
+
+# Production Stage
+FROM node:20-alpine
+
+LABEL expertree=true
+
+# Set working directory
+WORKDIR /strapi
+
+# Copy the built application from the build stage
+COPY --from=BUILD_IMAGE /strapi /strapi
+
+# Expose the Strapi port
+EXPOSE 1337
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV STRAPI_LOG_LEVEL=debug
+
+# Start the Strapi application
+CMD ["yarn", "start"]

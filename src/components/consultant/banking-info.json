@@ -1,0 +1,43 @@
+{
+  "collectionName": "banking_infos",
+  "info": {
+    "name": "banking-info",
+    "icon": "money-bill-wave",
+    "displayName": "Banking Info",
+    "description": "Banking Info"
+  },
+  "attributes": {
+    "iban": {
+      "type": "string"
+    },
+    "bankName": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "areaPostalCodes": {
+      "type": "string"
+    },
+    "commune": {
+      "type": "string"
+    },
+    "canton": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::canton.canton"
+    },
+    "country": {
+      "type": "string"
+    },
+    "holderFirstName": {
+      "type": "string"
+    },
+    "holderLastName": {
+      "type": "string"
+    }
+  }
+}

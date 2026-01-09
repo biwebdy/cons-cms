@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_time_sheet_working_days",
+  "info": {
+    "displayName": "Working Days",
+    "icon": "clock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "day": {
+      "type": "date",
+      "required": true
+    },
+    "numberOfHoursWorked": {
+      "type": "decimal",
+      "required": true
+    },
+    "expense": {
+      "type": "decimal",
+      "required": true
+    },
+    "overtime": {
+      "type": "decimal"
+    }
+  }
+}
